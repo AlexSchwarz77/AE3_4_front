@@ -1,0 +1,99 @@
+<head>
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+  />
+</head>
+<form #editForm="ngForm" (ngSubmit)="onEditUser(editForm)" *ngIf="user">
+  <label for="userName">USERNAME: </label>
+  <input
+    type="text"
+    id="userName"
+    #userName="ngModel"
+    [(ngModel)]="user.userName"
+    name="userName"
+    required
+  />
+  <label for="password">PASSWORD: </label>
+  <input
+    type="password"
+    id="password"
+    name="password"
+    #password="ngModel"
+    [(ngModel)]="user.password"
+    required
+  />
+  <label for="email">EMAIL: </label>
+  <input
+    type="email"
+    name="email"
+    id="email"
+    #email="ngModel"
+    [(ngModel)]="user.email"
+    required
+  />
+  <div *ngFor="let role of user.role">
+    <label for="role">{{ role.role }}</label>
+    <input
+      type="checkbox"
+      name="role"
+      id="role"
+      #role="ngModel"
+      [ngModel]="user.role"
+      disabled
+    />
+  </div>
+  <button
+    type="button"
+    class="btn btn-primary me-md-2"
+    title="edit User"
+    data-bs-toggle="modal"
+    data-bs-target="#modalRole"
+    id="editRoleBtn"
+  >
+    <span class="material-symbols-outlined"> edit </span>
+  </button>
+  <input type="submit" value="send" />
+</form>
+
+
+<div
+  class="modal fade"
+  id="modalRole"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="modalRole"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-titel">Change Role</h5>
+        <button
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <form #editRole="ngForm" (ngSubmit)="editRoles(user, editRole)">
+        <div class="modal-body">
+          <label for="role">Role: </label>
+          <div class="form-check form-check-inline" *ngFor="let role of roles">
+            <input
+              type="checkbox"
+              #role="ngModel"
+              [ngModel]="isSelected(role)"
+              name="role"
+              (ngModelChange)="roleChange(role, $event)"
+            />
+            <label for="role" class="form-check-label">{{ role.role }}</label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" id="submit">save</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<form #formUser="ngForm" (ngSubmit)="onAddUser(formUser)">
+  <label for="userName">USERNAME: </label>
+  <input type="text" id="userName" #userName="ngModel" (ngModel)="addUser.userName" name="userName" required>
+  <label for="password">PASSWORD: </label>
+  <input type="password" id="password" name="password" #password="ngModel" (ngModel)="addUser.password" required>
+  <label for="email">EMAIL: </label>
+  <input type="email" name="email" id="email" #email="ngModel" (ngModel)="addUser.email" required>
+  <div *ngFor="let role of roles">
+    <label for="role">{{ role.role }}</label>
+    <input type="checkbox" name="role" id="role" [ngModel]="isSelected(role)" (ngModelChange)="roleChange(role, $event)">
+  </div>
+  <input type="submit" value="send">
+</form>
