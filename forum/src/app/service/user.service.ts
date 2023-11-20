@@ -18,4 +18,13 @@ export class UserService {
   userById(id: number): Observable<any> {
     return this.http.get(`http://localhost:8080/user/${id}`);
   }
+  updateUser(user: User): Observable<User> {
+    return this.http.put<User>('http://localhost:8080/user/update', user);
+  }
+  updatePwUser(user: User): Observable<User> {
+    return this.http.put<User>('http://localhost:8080/user/update/pw', user);
+  }
+  validatePw(user: User): Observable<Boolean> {
+    return this.http.post<Boolean>('http://localhost:8080/user/pw', user);
+  }
 }

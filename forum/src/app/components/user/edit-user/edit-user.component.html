@@ -14,15 +14,6 @@
     name="userName"
     required
   />
-  <label for="password">PASSWORD: </label>
-  <input
-    type="password"
-    id="password"
-    name="password"
-    #password="ngModel"
-    [(ngModel)]="user.password"
-    required
-  />
   <label for="email">EMAIL: </label>
   <input
     type="email"
@@ -32,6 +23,15 @@
     [(ngModel)]="user.email"
     required
   />
+  <button
+    type="button"
+    class="btn btn-primary me-md-2"
+    title="edit Password"
+    data-bs-toggle="modal"
+    data-bs-target="#modalPw"
+    id="editPwBtn"
+  >Change Password
+  </button>
   <div *ngFor="let role of user.role">
     <label for="role">{{ role.role }}</label>
     <input
@@ -43,7 +43,7 @@
       disabled
     />
   </div>
-  <button
+  <button *ngIf="admin"
     type="button"
     class="btn btn-primary me-md-2"
     title="edit User"
@@ -88,6 +88,42 @@
             />
             <label for="role" class="form-check-label">{{ role.role }}</label>
           </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" id="submit">save</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  id="modalPw"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="modalPw"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-titel">Change Password</h5>
+        <button
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <form #editPw="ngForm" (ngSubmit)="editCPw(pw, editPw)">
+        <div class="modal-body">
+          <label for="oldPw">Enter your current Password</label>
+          <input type="password" name="oldPw" id="oldPw" #oldPw="ngModel" (ngModel)="pw.oldPw">
+          <label for="newPw1">Enter your new Password</label>
+          <input type="password" name="newPw1" id="newPw1" #newPw1="ngModel" (ngModel)="pw.newPw1">
+          <label for="newPw2">Repeat your new Password</label>
+          <input type="password" name="newPw2" id="newPw2" #newPw2="ngModel" (ngModel)="pw.newPw2">
         </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" id="submit">save</button>
