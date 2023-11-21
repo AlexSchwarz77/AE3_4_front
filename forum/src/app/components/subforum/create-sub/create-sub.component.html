@@ -1,0 +1,10 @@
+<div class="container">
+  <div *ngFor="let subf of subs">
+   <a href="/{{subf.subName}}">{{ subf.subName }}</a>
+  </div>
+  <form #subforumForm="ngForm" (ngSubmit)="onAddSub(subforumForm)">
+    <label for="subName">New Subforum</label>
+    <input type="text" name="subName" id="subName" #subName="ngModel" (ngModel)="sub.subName"/>
+    <input type="submit" value="Send">
+  </form>
+</div>

@@ -73,15 +73,15 @@ export class EditUserComponent implements OnInit {
 
   editCPw(pw: any, form: NgForm) {
     let user: User = new User();
-    user = this.user;
+    user = structuredClone(this.user);
     user.password = form.value.oldPw;
     this.userService.validatePw(user).subscribe((data) => {
       if (data === true) {
         if (form.value.newPw1 == form.value.newPw2) {
           this.user.password = form.value.newPw1;
-          this.userService
-            .updatePwUser(this.user)
-            .subscribe(() => alert('Password changed'));
+          this.userService.updatePwUser(this.user).subscribe(() => {
+            alert('Password changed');
+          });
         } else {
           alert('Passwords are not identical');
         }

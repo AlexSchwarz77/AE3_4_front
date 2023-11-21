@@ -1,0 +1,7 @@
+<div class="container">
+  <div class="card" *ngFor="let user of users">
+    <h2>{{ user.userName }}</h2>
+    <h5>{{ user.email }}</h5>
+    <button (click)="deleteUser(user.userId)">Delete</button>
+  </div>
+</div>

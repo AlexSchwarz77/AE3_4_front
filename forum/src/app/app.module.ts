@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
@@ -11,6 +10,8 @@ import { LoginComponent } from './components/login/login.component';
 import { CreateComponent } from './components/user/create/create.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EditUserComponent } from './components/user/edit-user/edit-user.component';
+import { UserComponent } from './components/user/user.component';
+import { CreateSubComponent } from './components/subforum/create-sub/create-sub.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,9 @@ import { EditUserComponent } from './components/user/edit-user/edit-user.compone
     HomeComponent,
     LoginComponent,
     CreateComponent,
-    EditUserComponent
+    EditUserComponent,
+    UserComponent,
+    CreateSubComponent
   ],
   imports: [
     BrowserModule,

@@ -27,4 +27,7 @@ export class UserService {
   validatePw(user: User): Observable<Boolean> {
     return this.http.post<Boolean>('http://localhost:8080/user/pw', user);
   }
+  deleteUser(id: number): Observable<User> {
+    return this.http.delete<User>(`http://localhost:8080/user/delete/${id}`);
+  }
 }
