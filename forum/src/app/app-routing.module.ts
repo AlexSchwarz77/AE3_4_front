@@ -6,6 +6,7 @@ import { CreateComponent } from './components/user/create/create.component';
 import { CreateSubComponent } from './components/subforum/create-sub/create-sub.component';
 import { EditUserComponent } from './components/user/edit-user/edit-user.component';
 import { UserComponent } from './components/user/user.component';
+import { SubviewComponent } from './components/subforum/subview/subview.component';
 
 
 const routes: Routes = [
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'create', component: CreateComponent },
   { path: 'edit-user/:id', component: EditUserComponent },
   { path: 'user-overview', component: UserComponent },
-  { path: 'subforum/create', component: CreateSubComponent}
+  { path: 'subforum/create', component: CreateSubComponent },
+  { path: 'subforum/:subName', component: SubviewComponent }
 ];
 
 @NgModule({

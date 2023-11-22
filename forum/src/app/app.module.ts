@@ -12,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { EditUserComponent } from './components/user/edit-user/edit-user.component';
 import { UserComponent } from './components/user/user.component';
 import { CreateSubComponent } from './components/subforum/create-sub/create-sub.component';
+import { SubviewComponent } from './components/subforum/subview/subview.component';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { CreateSubComponent } from './components/subforum/create-sub/create-sub.
     CreateComponent,
     EditUserComponent,
     UserComponent,
-    CreateSubComponent
+    CreateSubComponent,
+    SubviewComponent,
   ],
   imports: [
     BrowserModule,
