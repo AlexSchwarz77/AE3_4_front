@@ -13,6 +13,7 @@ import { EditUserComponent } from './components/user/edit-user/edit-user.compone
 import { UserComponent } from './components/user/user.component';
 import { CreateSubComponent } from './components/subforum/create-sub/create-sub.component';
 import { SubviewComponent } from './components/subforum/subview/subview.component';
+import { ThreadCreateComponent } from './components/thread/create/thread-create.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { SubviewComponent } from './components/subforum/subview/subview.componen
     UserComponent,
     CreateSubComponent,
     SubviewComponent,
+    ThreadCreateComponent
   ],
   imports: [
     BrowserModule,

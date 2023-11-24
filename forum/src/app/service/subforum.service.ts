@@ -21,7 +21,5 @@ export class SubforumService {
     return this.http.post<Subforum>(`${this.apiUrl}subforum/save`, subForm);
   }
 
-  getAllThreadBySubforum(subName: string): Observable<any>{
-    return this.http.get(`${this.apiUrl}subforum/search/${subName}`);
-  }
+  
 }
