@@ -1,0 +1,10 @@
+<form #threadForm="ngForm" (ngSubmit)="subSub(threadForm)">
+    <div>
+        <label for="name">Test</label>
+        <select class="form-select form-select-sm" id="sub" #sub="ngModel" ngModel name="sub" title="Subforum">
+            <option value=""> ---- </option>
+            <option [ngValue]="sub" *ngFor="let sub of subFora">{{sub.subName}}</option>
+        </select>
+        <button type="submit">send</button>
+    </div>
+</form>
