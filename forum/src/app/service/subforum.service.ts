@@ -21,5 +21,9 @@ export class SubforumService {
     return this.http.post<Subforum>(`${this.apiUrl}subforum/save`, subForm);
   }
 
+  getSubByName(name: string): Observable<any>{
+    return this.http.get(`${this.apiUrl}subforum/name/${name}`);
+  }
+
   
 }

@@ -1,7 +1,22 @@
-.form-select{
-    width: 10%;
-    
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-form{
-    margin-left: 6rem;
+
+.form-select {
+    width: 50%;
+
+}
+
+form {
+    /* margin-left: 6rem; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+input, textarea {
+    display: block;
 }

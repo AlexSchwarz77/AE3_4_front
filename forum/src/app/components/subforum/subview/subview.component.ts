@@ -16,6 +16,7 @@ export class SubviewComponent implements OnInit {
   ngOnInit(): void {
     const subName = this.route.snapshot.paramMap.get('subName')!;
     this.threadService.getAllThreadBySubforum(subName).subscribe(data =>
-      {this.threads = data;})
+      {this.threads = data;
+      })
   }
 }

@@ -1,5 +1,11 @@
 <form #threadForm="ngForm" (ngSubmit)="subSub(threadForm)">
     <div>
+        <label for="threadTitle">Title of Thread</label>
+        <input class="form-control form-control-lg" type="text" name="threadTitle" id="threadTitle" #threadTitle="ngModel" ngModel required>
+
+        <!-- <input type="text" name="id" id="name" value="1" hidden #id="ngModel" (ngModel)="thread."> -->
+        <label for="content">Content of the Thread</label>
+        <textarea class="form-control" name="content" id="content" cols="75" rows="30" #content="ngModel" ngModel required></textarea>
         <label for="name">Test</label>
         <select class="form-select form-select-sm" id="sub" #sub="ngModel" ngModel name="sub" title="Subforum">
             <option value=""> ---- </option>
