@@ -16,6 +16,8 @@ import { SubviewComponent } from './components/subforum/subview/subview.componen
 import { ThreadCreateComponent } from './components/thread/create/thread-create.component';
 import { ThreadViewComponent } from './components/thread/thread-view/thread-view.component';
 import { ProfileComponent } from './components/user/profile/profile.component';
+import { SidenavComponent } from './components/html/sidenav/sidenav.component';
+
 
 
 @NgModule({
@@ -32,7 +34,8 @@ import { ProfileComponent } from './components/user/profile/profile.component';
     SubviewComponent,
     ThreadCreateComponent,
     ThreadViewComponent,
-    ProfileComponent
+    ProfileComponent,
+    SidenavComponent
   ],
   imports: [
     BrowserModule,

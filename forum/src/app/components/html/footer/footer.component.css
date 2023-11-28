@@ -1,0 +1,7 @@
+footer{
+    bottom: 0;
+    /* position: sticky; */
+    margin-top: 3rem;
+    background-color: pink;
+    width: 100vw;
+}

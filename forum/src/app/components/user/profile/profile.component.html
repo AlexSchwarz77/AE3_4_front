@@ -11,7 +11,7 @@
 <h5>Last 10 Posts</h5>
 <div *ngFor="let post of posts">
     <ul>
-        <li>{{ post.date}} <a href="subforum/{{post.threadModel.subforum.subName}}/{{post.threadModel.threadId}}/{{post.threadModel.threadTitle}}/#{{post.postId}}">{{post.content}}</a></li>
+        <li>{{ post.date}} <a href="subforum/{{post.threadModel.subforum.subName}}/{{post.threadModel.threadId}}/{{post.threadModel.threadTitle}}#{{post.postId}}">{{post.content}}</a></li>
     </ul>
 </div>
 
