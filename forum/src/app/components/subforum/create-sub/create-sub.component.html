@@ -1,6 +1,6 @@
 <div class="container">
   <div *ngFor="let subf of subs">
-   <a href="/{{subf.subName}}">{{ subf.subName }}</a>
+   <a href="/subforum/{{subf.subName}}">{{ subf.subName }}</a>
   </div>
   <form #subforumForm="ngForm" (ngSubmit)="onAddSub(subforumForm)">
     <label for="subName">New Subforum</label>

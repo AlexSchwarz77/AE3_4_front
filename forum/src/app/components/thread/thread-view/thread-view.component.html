@@ -1,0 +1,46 @@
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<div class="container">
+    <div class="threadPost" *ngIf="thread">
+        <h2>{{thread.threadTitle}}</h2>
+        <p>{{thread.content}}</p>
+        <small>{{thread.date}} <a href="/user/{{thread.user.userId}}">{{thread.user.userName}}</a> </small>
+    </div>
+    <button type="button" class="btn btn-primary me-md-2" title="add Post" data-bs-toggle="modal"
+        data-bs-target="#modalPost" id="editPostBtn">
+        <span class="material-symbols-outlined"> add </span>
+        Comment
+    </button>
+
+    <div class="posts" *ngFor="let post of posts; index as  i ">
+        <small id="{{post.postId}}">{{i + 1}} <a href="/user/{{post.user.userId}}" >{{ post.user.userName }}</a> {{post.date}}</small>
+        <p>{{post.content}}</p>
+    </div>
+
+    <button type="button" class="btn btn-primary me-md-2" title="add Post" data-bs-toggle="modal"
+        data-bs-target="#modalPost" id="editPostBtn">
+        <span class="material-symbols-outlined"> add </span>
+        Comment
+    </button>
+</div>
+
+<div class="modal fade" id="modalPost" tabindex="-1" role="dialog" aria-labelledby="modalPost" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-titel">New Post</h5>
+                <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form #postForm="ngForm" (ngSubmit)="postThePost(postForm)">
+                <div class="modal-body">
+                    <label for="content">new Post</label>
+                    <textarea name="content" id="content" cols="50" rows="15" #content="ngModel" (ngModel)="content"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" id="submit">post!</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cancel</button>
+                </div>
+            </form>
+        </div>
+
+    </div>

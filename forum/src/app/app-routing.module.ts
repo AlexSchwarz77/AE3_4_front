@@ -8,6 +8,8 @@ import { EditUserComponent } from './components/user/edit-user/edit-user.compone
 import { UserComponent } from './components/user/user.component';
 import { SubviewComponent } from './components/subforum/subview/subview.component';
 import { ThreadCreateComponent } from './components/thread/create/thread-create.component';
+import { ThreadViewComponent } from './components/thread/thread-view/thread-view.component';
+import { ProfileComponent } from './components/user/profile/profile.component';
 
 
 const routes: Routes = [
@@ -18,7 +20,9 @@ const routes: Routes = [
   { path: 'user-overview', component: UserComponent },
   { path: 'subforum/create', component: CreateSubComponent },
   { path: 'subforum/:subName', component: SubviewComponent },
-  { path: 'thread/:subName/create', component: ThreadCreateComponent }
+  { path: 'thread/:subName/create', component: ThreadCreateComponent },
+  { path: 'subforum/:subName/:threadId/:subTitle', component: ThreadViewComponent },
+  { path: 'user/:id', component: ProfileComponent }
 ];
 
 @NgModule({

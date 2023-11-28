@@ -1,0 +1,18 @@
+
+<h2>{{userName}}</h2>
+<h4> {{countPost}} Postkarma</h4>
+<h4> {{countThread}} Threadkarma</h4>
+<h5>Last 10 Threads</h5>
+<div *ngFor="let thread of threads">
+    <ul>
+        <li>{{ thread.date}} <a href="subforum/{{thread.subforum.subName}}/{{thread.threadId}}/{{thread.threadTitle}}">{{thread.threadTitle}}</a></li>
+    </ul>
+</div>
+<h5>Last 10 Posts</h5>
+<div *ngFor="let post of posts">
+    <ul>
+        <li>{{ post.date}} <a href="subforum/{{post.threadModel.subforum.subName}}/{{post.threadModel.threadId}}/{{post.threadModel.threadTitle}}/#{{post.postId}}">{{post.content}}</a></li>
+    </ul>
+</div>
+
+

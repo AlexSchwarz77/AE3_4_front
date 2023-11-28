@@ -20,4 +20,15 @@ export class ThreadService {
   saveThread(thread:ThreadModel):Observable<ThreadModel>{
     return this.http.post<ThreadModel>(`${this.apiUrl}thread/save`, thread)
   }
+
+  findThreadById(id: number): Observable<any>{
+    return this.http.get(`${this.apiUrl}thread/${id}`)
+  }
+  countThreadsByUser(id: number): Observable<any> {
+    return this.http.get(`${this.apiUrl}thread/count/${id}`);
+  }
+
+  lastThreadsByUser(id: number):Observable<any> {
+    return this.http.get(`${this.apiUrl}thread/threads/${id}`)
+  }
 }

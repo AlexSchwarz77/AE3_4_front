@@ -1,7 +1,8 @@
 <div *ngFor="let thread of threads">
+  <a href="subforum/{{subName}}/{{thread.threadId}}/{{thread.subTitle}}">
   <div>
     <p>{{ thread.date}} CET</p>
     <p>{{thread.subTitle}}</p>
     <p>{{ thread.content }}</p>
-  </div>
+  </div></a>
 </div>

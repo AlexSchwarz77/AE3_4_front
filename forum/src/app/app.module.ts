@@ -14,6 +14,8 @@ import { UserComponent } from './components/user/user.component';
 import { CreateSubComponent } from './components/subforum/create-sub/create-sub.component';
 import { SubviewComponent } from './components/subforum/subview/subview.component';
 import { ThreadCreateComponent } from './components/thread/create/thread-create.component';
+import { ThreadViewComponent } from './components/thread/thread-view/thread-view.component';
+import { ProfileComponent } from './components/user/profile/profile.component';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { ThreadCreateComponent } from './components/thread/create/thread-create.
     UserComponent,
     CreateSubComponent,
     SubviewComponent,
-    ThreadCreateComponent
+    ThreadCreateComponent,
+    ThreadViewComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

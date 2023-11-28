@@ -11,11 +11,12 @@ import { ThreadService } from 'src/app/service/thread.service';
 })
 export class SubviewComponent implements OnInit {
   threads!: Array<any>;
+  subName!: string;
 
   constructor(private route: ActivatedRoute, private threadService: ThreadService){}
   ngOnInit(): void {
-    const subName = this.route.snapshot.paramMap.get('subName')!;
-    this.threadService.getAllThreadBySubforum(subName).subscribe(data =>
+    this.subName = this.route.snapshot.paramMap.get('subName')!;
+    this.threadService.getAllThreadBySubforum(this.subName).subscribe(data =>
       {this.threads = data;
       })
   }

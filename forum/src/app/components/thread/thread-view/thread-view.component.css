@@ -1,0 +1,11 @@
+.threadPost{
+    border: 1px solid gray;
+}
+
+.posts{
+    border-bottom: 1px solid lightgray;
+}
+
+.container {
+    margin-top: 25rem;
+}
