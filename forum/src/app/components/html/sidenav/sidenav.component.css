@@ -1,11 +1,8 @@
 .sidenav{
-    height: 100vh;
     width: 150px;
-    border: 1px solid lightgray;
+    border-right: 1px solid lightgray;
     background-color: transparent;
-    margin-top: 3;
     overflow-y: auto;
-    position: fixed;
 }
 li{
     list-style: none;
@@ -17,4 +14,8 @@ a{
 
 ul{
     margin-top: 200px;
+}
+:host{
+    width: 150px;
+    height: 100vh;
 }

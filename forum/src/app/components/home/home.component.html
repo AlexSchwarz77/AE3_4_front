@@ -1,1 +1,15 @@
-<p>home works!</p>
+<main class="content" *ngFor="let thread of threads">
+    <a href="subforum/{{thread.subforum.subName}}/{{thread.threadId}}/{{thread.threadTitle}}">
+    <div class="card">
+        <div class="card-header">
+            <small>{{thread.subforum.subName}}</small>
+            <h3>{{thread.threadTitle}}</h3>
+        </div>
+        <div class="card-body">
+
+            <p>{{thread.content}}</p>
+
+        </div>
+    </div>
+    </a>
+</main>

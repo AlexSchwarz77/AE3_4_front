@@ -10,3 +10,8 @@
   justify-content: center;
   text-align: center;
 }
+:host{
+  width: 80%;
+  display: flex;margin-top: 5rem;
+  margin-bottom: 5rem;
+}

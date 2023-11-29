@@ -12,6 +12,10 @@ export class ThreadService {
   apiUrl = environment.apiUrl;
 
   constructor(private http: HttpClient) { }
+
+  getAllThreads(): Observable<Array<ThreadModel>>{
+    return this.http.get<Array<ThreadModel>>(`${this.apiUrl}thread/all}`);
+  }
   
   getAllThreadBySubforum(subName: string): Observable<any>{
     return this.http.get(`${this.apiUrl}thread/search/${subName}`);
@@ -29,6 +33,10 @@ export class ThreadService {
   }
 
   lastThreadsByUser(id: number):Observable<any> {
-    return this.http.get(`${this.apiUrl}thread/threads/${id}`)
+    return this.http.get(`${this.apiUrl}thread/threads/${id}`);
+  }
+
+  latestThreads(): Observable<Array<ThreadModel>> {
+    return this.http.get<Array<ThreadModel>>(`${this.apiUrl}thread/latest`);
   }
 }

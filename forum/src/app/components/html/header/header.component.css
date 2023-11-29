@@ -7,17 +7,21 @@
   margin-left: 1rem;
   margin-top: 1rem;
   margin-right: 1rem;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 header{
   margin-bottom: 3.5rem;
   background-color: white;
   top: 0;
+  width: 20%;
 }
 svg{
   margin-bottom: 0.5rem;
 }
 .navbar-lg{
   background-color: white;
+  
 }

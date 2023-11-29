@@ -2,15 +2,5 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
+    display: flex;
   }
-  /* app-header{
-    width: 100vw;
-    height: 100vh;
-  } */
-  /* body {
-    width: 100vw;
-    height: 100vh;
-  } */
